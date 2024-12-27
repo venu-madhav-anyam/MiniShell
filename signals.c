@@ -12,7 +12,7 @@ void signal_handler(int sig_num)
 
     if (strlen(input_str) < 2 && sig_num != SIGCHLD)
     {
-        printf("%s", prompt);
+        printf(GREEN "%s" BLUE "%s", prompt, getcwd(NULL, 0));
         printf("\x1b[0m$ " RESET);
         fflush(stdout);
     }
